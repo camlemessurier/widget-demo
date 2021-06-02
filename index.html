@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Demo page of the widget</title>
+	</head>
+	<body>
+		<h1>Finish By 4 Demo Widget</h1>
+		<p>This is a clients application</p>
+
+		<p>
+			To activate login action, click
+			<a href="javascript:;" onclick="UserLotSentimentWidget('action', 'login')"
+				>here</a
+			>
+			<br />
+			To activate second question logout, click
+			<a
+				href="javascript:;"
+				onclick="UserLotSentimentWidget('action', 'logout')"
+				>here</a
+			>
+			<br />
+			To send action where user doesn't have popup defined.
+			<a href="javascript:;" onclick="UserLotSentimentWidget('action', 'thsjd')"
+				>here</a
+			>
+		</p>
+
+		<script>
+			(function (w, d, s, o, f, js, fjs) {
+				w[o] =
+					w[o] ||
+					function () {
+						(w[o].queue = w[o].queue || []).push(arguments);
+					};
+				(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+				js.id = o;
+				js.src = f;
+				js.async = 1;
+				fjs.parentNode.insertBefore(js, fjs);
+			})(window, document, 'script', 'UserLotSentimentWidget', './widget.js');
+
+			UserLotSentimentWidget('init', {
+				apiKey: '1234789057980',
+				userId: '12341243',
+				productName: 'tprod',
+				surveyActions: [
+					{
+						action: 'page-loaded',
+						surveyType: 'nps',
+						surveyId: '1alsdfajsdfk',
+					},
+					{
+						action: 'login',
+						surveyType: 'nps',
+						askMessage: true,
+						surveyId: '1alsdfajsdfk',
+					},
+					{
+						action: 'logout',
+						surveyType: 'csat',
+						question: 'hello, this is a logout set question',
+						surveyId: '1alsdfajsdfk',
+					},
+				],
+			});
+			UserLotSentimentWidget('action', 'login');
+		</script>
+	</body>
+</html>
